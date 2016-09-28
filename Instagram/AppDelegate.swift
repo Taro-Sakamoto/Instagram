@@ -17,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool { FIRApp.configure()
+        
+        // Adobeの管理画面で登録したアプリのClientIDとSecretの文字列を設定する
+        AdobeUXAuthManager.sharedManager().setAuthenticationParametersWithClientID("495b0b688e344607ace4654131f24cc0", withClientSecret: "9fd45390-3f55-4dab-91a6-1b53b1dbf981")
+  
         // Override point for customization after application launch.
         return true
     }
+    
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
