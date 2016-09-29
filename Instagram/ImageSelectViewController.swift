@@ -15,6 +15,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBAction func handleLibraryButton(sender: AnyObject) {
     
+         // ライブラリ（カメラロール）を指定してピッカーを開く
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.PhotoLibrary) {
             let pickerController = UIImagePickerController()
             pickerController.delegate = self
@@ -42,18 +43,10 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
-    
-    
-    @IBAction func handleCancelButton(sender: AnyObject) {
+    @IBAction func handleCancelButton(sender: UIButton) {
    
     
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-            let pickerController = UIImagePickerController()
-            pickerController.delegate = self
-            pickerController.sourceType = UIImagePickerControllerSourceType.Camera
-            presentViewController(pickerController, animated: true, completion: nil)
-        }
-    
+    dismissViewControllerAnimated(true, completion: nil)
     
     
     }
