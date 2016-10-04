@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		500819611D9E8F0900508EF4 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5008195F1D9E8F0900508EF4 /* PostTableViewCell.swift */; };
 		500819621D9E8F0900508EF4 /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 500819601D9E8F0900508EF4 /* PostTableViewCell.xib */; };
+		500819641D9E948A00508EF4 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500819631D9E948A00508EF4 /* PostData.swift */; };
 		5008C2D71D995F8A00AF781F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5008C2D61D995F8A00AF781F /* UIKit.framework */; };
 		507AA4651D9BD43B004A70AC /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507AA4641D9BD43B004A70AC /* libc++.tbd */; };
 		507AA4671D9BD446004A70AC /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 507AA4661D9BD446004A70AC /* libz.1.2.5.tbd */; };
@@ -62,6 +63,7 @@
 /* Begin PBXFileReference section */
 		5008195F1D9E8F0900508EF4 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		500819601D9E8F0900508EF4 /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		500819631D9E948A00508EF4 /* PostData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
 		5008C2D61D995F8A00AF781F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		507AA45B1D9BCE92004A70AC /* Instagram-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instagram-Bridging-Header.h"; sourceTree = "<group>"; };
 		507AA4641D9BD43B004A70AC /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
@@ -162,6 +164,7 @@
 				508E05981D921F1300D00780 /* Main.storyboard */,
 				5008195F1D9E8F0900508EF4 /* PostTableViewCell.swift */,
 				500819601D9E8F0900508EF4 /* PostTableViewCell.xib */,
+				500819631D9E948A00508EF4 /* PostData.swift */,
 				508E059B1D921F1300D00780 /* Assets.xcassets */,
 				508E059D1D921F1300D00780 /* LaunchScreen.storyboard */,
 				50E72B4D1D96A55E0098B6A2 /* Const.swift */,
@@ -332,6 +335,7 @@
 				508E05971D921F1300D00780 /* ViewController.swift in Sources */,
 				508E05951D921F1300D00780 /* AppDelegate.swift in Sources */,
 				508E05AD1D92217A00D00780 /* ImageSelectViewController.swift in Sources */,
+				500819641D9E948A00508EF4 /* PostData.swift in Sources */,
 				50E72B4E1D96A55E0098B6A2 /* Const.swift in Sources */,
 				508E05B11D9221A700D00780 /* SettingViewController.swift in Sources */,
 				508E05AB1D92216700D00780 /* HomeViewController.swift in Sources */,
