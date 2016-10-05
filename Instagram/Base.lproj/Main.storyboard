@@ -95,12 +95,11 @@
         <!--Image Select View Controller-->
         <scene sceneID="Ala-qp-p9O">
             <objects>
-                <viewController id="od0-8e-jW0" customClass="ImageSelectViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageSelect" id="od0-8e-jW0" customClass="ImageSelectViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="U42-wW-56n"/>
                         <viewControllerLayoutGuide type="bottom" id="H0P-J5-Ku4"/>
                     </layoutGuides>
-                    <string key="storyboardIdentifier">	ImageSelect</string>
                     <view key="view" contentMode="scaleToFill" id="FSl-Si-7ga">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,7 +290,7 @@
                                 </constraints>
                                 <state key="normal" title="投稿" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="handlepostbutton:" destination="bDd-qm-PXL" eventType="touchUpInside" id="j0H-IP-O7C"/>
+                                    <action selector="handlePostButton:" destination="bDd-qm-PXL" eventType="touchUpInside" id="mEq-gN-iCp"/>
                                 </connections>
                             </button>
                         </subviews>
