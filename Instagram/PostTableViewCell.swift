@@ -24,7 +24,9 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var comment: UITextField!
     
     @IBOutlet weak var commentbutton: UIButton!
-
+    
+    @IBOutlet weak var commentlabel: UILabel!
+    
 
 func setPostData(postData: PostData) {
     postImageView.image = postData.image
