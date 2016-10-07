@@ -21,7 +21,9 @@ class PostTableViewCell: UITableViewCell {
     
     @IBOutlet weak var captionLabel: UILabel!
     
+    @IBOutlet weak var comment: UITextField!
     
+    @IBOutlet weak var commentbutton: UIButton!
 
 
 func setPostData(postData: PostData) {
@@ -29,6 +31,9 @@ func setPostData(postData: PostData) {
     captionLabel.text = "\(postData.name!) : \(postData.caption!)"
     let likeNumber = postData.likes.count
     likeLabel.text = "\(likeNumber)"
+    
+    
+    
     
     let formatter = NSDateFormatter()
     formatter.locale = NSLocale(localeIdentifier: "ja_JP")
@@ -40,11 +45,26 @@ func setPostData(postData: PostData) {
     if postData.isLiked {
         let buttonImage = UIImage(named: "like_exist")
         likeButton.setImage(buttonImage, forState: UIControlState.Normal)
-    } else {
+    
+    
+    
+    
+    }else {
         let buttonImage = UIImage(named: "like_none")
         likeButton.setImage(buttonImage, forState: UIControlState.Normal)
     }
-}
+
+    
+    
+    
+   
+    
+    
+    
+    
+    
+    
+    }
 
 
     override func awakeFromNib() {

@@ -18,12 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-jx-CII">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ecx-jx-CII">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ecx-jx-CII" secondAttribute="bottom" id="D7p-LW-MrU"/>
+                            <constraint firstItem="ecx-jx-CII" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JuX-3a-tOn"/>
+                            <constraint firstAttribute="trailing" secondItem="ecx-jx-CII" secondAttribute="trailing" id="rn0-ml-YTZ"/>
+                            <constraint firstItem="ecx-jx-CII" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="tLH-P4-tsA"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="ecx-jx-CII" id="9OZ-Ua-s76"/>

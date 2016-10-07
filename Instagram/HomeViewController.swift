@@ -53,8 +53,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents:  UIControlEvents.TouchUpInside)
+        cell.commentbutton.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents:  UIControlEvents.TouchUpInside)
+        
+        
         
         return cell
+   
+    
+    
+    
+    
     }
     
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -107,6 +115,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH)
             postRef.child(postData.id!).setValue(post)
         }
+   
+    
+    
+    
+    
+    
+    
+    
+    
     }
     
     
