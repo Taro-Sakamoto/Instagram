@@ -20,6 +20,7 @@ class PostData: NSObject {
     var likes: [String] = []
     var isLiked: Bool = false
     var comment: String!
+    var comments: [[String:String]] = []
 
     
     init(snapshot: FIRDataSnapshot, myId: String) {
@@ -34,8 +35,11 @@ class PostData: NSObject {
         
         caption = valueDictionary["caption"] as? String
         
-        comment = valueDictionary[""]as? String
-        
+        // snapshotからコメント取り出し
+        if let comments = valueDictionary["comments"] as? [[String:String]] {
+            self.comments = comments
+
+        }
         if let likes = valueDictionary["likes"] as? [String] {
             self.likes = likes
         
@@ -52,5 +56,12 @@ class PostData: NSObject {
         }
         
         self.date = NSDate(timeIntervalSinceReferenceDate: valueDictionary["time"] as! NSTimeInterval)
+  
+    
+    // [onishi]
+    if let comments = valueDictionary["comments"] as? [[String:String]] {
+        self.comments = comments
     }
+    }
+    
 }

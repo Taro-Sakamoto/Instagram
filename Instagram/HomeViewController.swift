@@ -53,9 +53,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents:  UIControlEvents.TouchUpInside)
-       
-        //コメント投稿ボタンの処理
-        cell.commentbutton.addTarget(self, action:#selector(handleButton(_:event:)), forControlEvents:  UIControlEvents.TouchUpInside)
+        
+        
+        
+        
+        // [onishi] コメント投稿ボタンの処理
+        cell.commentbutton.addTarget(self, action:#selector(handleCommentPostButton(_:event:)), forControlEvents:  UIControlEvents.TouchUpInside)
         
         
         
@@ -67,6 +70,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     }
     
+    
     func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // Auto Layoutを使ってセルの高さを動的に変更する
         return UITableViewAutomaticDimension
@@ -77,7 +81,47 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    
+    // [onishi] コメント投稿ボタン タップ
+    func handleCommentPostButton(sender: UIButton, event:UIEvent) {
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches()?.first
+        let point = touch!.locationInView(self.tableView)
+        let indexPath = tableView.indexPathForRowAtPoint(point)
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath!) as! PostTableViewCell
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        
+        // Firebaseに保存するデータの準備
+        if let uid = FIRAuth.auth()?.currentUser?.uid {
+            
+            let imageString = postData.imageString
+            let name:String = postData.name!
+            let caption = postData.caption
+            let time = (postData.date?.timeIntervalSinceReferenceDate)! as NSTimeInterval
+            let likes = postData.likes
+            
+            // 辞書を作成してFirebaseに保存する
+            
+            // 入力されたコメント取得
+            let comment = cell.getComment()
+            let comments = ["name": name, "comment": comment]
+            
+            // コメントを配列へ追加
+            postData.comments.append(comments)
+            
+            
+            // Firebaseに保存する
+            let post = ["caption": caption!, "image": imageString!, "name": name, "time": time, "likes": likes, "comments": comments]
+            
+            
+            let postRef = FIRDatabase.database().reference().child(CommonConst.PostPATH)
+            postRef.child(postData.id!).setValue(post)
+            
+        }
+        
+    }
     // セル内のボタンがタップされた時に呼ばれるメソッド
     func handleButton(sender: UIButton, event:UIEvent) {
         

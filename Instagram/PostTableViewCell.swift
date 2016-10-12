@@ -31,6 +31,7 @@ class PostTableViewCell: UITableViewCell {
 func setPostData(postData: PostData) {
     postImageView.image = postData.image
     captionLabel.text = "\(postData.name!) : \(postData.caption!)"
+    commentlabel.text = postData.comment
     let likeNumber = postData.likes.count
     likeLabel.text = "\(likeNumber)"
     
@@ -43,6 +44,9 @@ func setPostData(postData: PostData) {
     
     let dateString:String = formatter.stringFromDate(postData.date!)
     dateLabel.text = dateString
+   
+    
+    
     
     if postData.isLiked {
         let buttonImage = UIImage(named: "like_exist")
@@ -80,5 +84,11 @@ func setPostData(postData: PostData) {
         // Configure the view for the selected state
     }
 
+   
+    // [onishi] コメントを返す
+    func getComment() -> String {
+        return self.comment.text!
+        
+    }
     
 }
